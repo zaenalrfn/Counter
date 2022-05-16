@@ -28,7 +28,7 @@ body {
 	color: white;
 }
 .box h4 {
-	font-size: 50px;
+	font-size: 70px;
 	color: white;
 	margin: 20px 0;
 }
@@ -39,4 +39,13 @@ body {
 	background: #000;
 	color: white;
 	font-size: 25px;
+	margin: 10px 0;
+}
+
+/* bagian responsive */
+@media screen and (max-width: 568px) {
+	.box {
+		width: auto;
+		margin: 0 10px;
+	}
 }
