@@ -1,20 +1,1 @@
-var counter = 0;
-const valueCounter = document.getElementById('value_counter'),
-	  counterBtns = document.querySelectorAll('.btn')
-
-
-
-counterBtns.forEach((itmeBtn) => {
-	itmeBtn.addEventListener('click', function(e) {
-		const styleCounter = e.target.classList; // bisa juga menggunakan currentTarget
-
-		if (styleCounter.contains('kurang')) { // fungsi dari contains yaitu mendupikat sebuah kelas
-			counter--;
-		} else if(styleCounter.contains('reset')) {
-			counter = 0;
-		} else if(styleCounter.contains('tambah')) {
-			counter++;
-		}
-		valueCounter.textContent = counter
-	})
-})
+var counter = 0;const valueCounter = document.getElementById('value_counter'),counterBtns = document.querySelectorAll('.btn')alert('Key: \n T = Tambah \n K = Kurang \n space = Reset')counterBtns.forEach((itmeBtn) => {	itmeBtn.addEventListener('click', function(e) {		const styleCounter = e.target.classList; // bisa juga menggunakan currentTarget		if (styleCounter.contains('kurang')) { // fungsi dari contains yaitu mendupikat sebuah kelas			counter--;		} else if(styleCounter.contains('reset')) {			counter = 0;		} else if(styleCounter.contains('tambah')) {			counter++;		}		valueCounter.textContent = counter	})})window.addEventListener('keyup', function(counterKey) {	// console.log(counterKey)	const counterStyle = counterKey.target.classList;	if (counterKey.keyCode === 84) {		counterKey.preventDefault();		counter++;	} else if (counterKey.keyCode === 75) {		counterKey.preventDefault();		counter--;	} else if (counterKey.keyCode === 32) {		counterKey.preventDefault();		counter = 0;	}	valueCounter.textContent = counter;})
